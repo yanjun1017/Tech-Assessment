@@ -23,7 +23,7 @@ if __name__ == "__main__":
 	# This is intended to find all complaints on 2017
 	# "where =" clause is going to select the specific data that fits the "where=" clause
 	# "limit" is used for getting the amount of data specify in the right hand side
-	results = client.get("fhrw-4uyv", where = " created_date > '2016-12-31T23:59:59.999'", limit = 10000000)
+	results = client.get("fhrw-4uyv", where = " created_date > '2016-12-31T23:59:59.999'", limit = 1000000)
 	# Convert to pandas DataFrame
 	results_df = pd.DataFrame.from_records(results)
 	"""
@@ -42,11 +42,8 @@ if __name__ == "__main__":
 	Question:  Consider only the 10 most common overall complaint types. For each borough, 
 	how many of each of those 10 types were there in 2017?
 	""" 
-	# "index" is used to marked the data definition for grouped2
-	index = 0
 	# Filter out unspecified borough
 	results_df = results_df.loc[results_df['borough'] != 'Unspecified']
-
 	# Loop through the top 10 most common complaint types
 	# "complaint_type" is one of the top 10 most common complaint types
 	for complaint_type in grouped['complaint_type']:
@@ -55,18 +52,41 @@ if __name__ == "__main__":
 		# This statement is used for grouping the variable with the same complaint type as "complaint_type" 
 		# and borough; and calculate the amount of data that fits the critirie 
 		temp = df.groupby(['borough', 'complaint_type']).size().reset_index(name='count')
-		if index == 0:
-			grouped2 = temp # define grouped2
-			index += 1
-		else:
-			# append the new data to "grouped2"
-			grouped2 = grouped2.append(temp)
+		if len(temp) != 0:
+			print(temp)
 
-	# For each borough, print the number of each of the 10 most common complaint types
-	print(grouped2)
 	"""
 	-----------------------------------------------------------------------
 	"""
 
+	"""
+	-----------------------------------------------------------------------
+	Question:  Consider only the 10 most common overall complaint types.  
+	For the 10 most populous zip codes, how many of each of those 10 types were there in 2017?
+	""" 
+	grouped1 = results_df.groupby(['incident_zip']).size().reset_index(name='count').sort_values('count', ascending=False).head(10)
+	# Filter out unspecified borough
+	results_df = results_df.loc[results_df['borough'] != 'Unspecified']
+	# Loop through the top 10 most common zip code
+	# "incident_zip" is one of the top 10 most common zip code
+	for incident_zip in grouped1['incident_zip']:
+		# Loop through the top 10 most common complaint types
+		# "complaint_type" is one of the top 10 most common complaint types
+		for complaint_type in grouped['complaint_type']:
+			# print(complaint_type)
+			# "df" contains only data with the same type as "complaint_type"
+			df = results_df[(results_df['incident_zip'] == incident_zip) & (results_df['complaint_type'] == complaint_type)]
+			# This statement is used for grouping the variable with the same complaint type as "complaint_type" 
+			# and zip code; and calculate the amount of data that fits the critirie 
+			temp = df.groupby(['incident_zip', 'complaint_type']).size().reset_index(name='count')
+			# print(temp)
+			if len(temp) != 0:
+				print(temp)
+			
+	# For the 10 most common zip code, print the number of the 10 most common complaint types
+
+	"""
+	-----------------------------------------------------------------------
+	"""
 	# Closed session when finished
 	client.close()
