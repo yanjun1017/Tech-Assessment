@@ -4,7 +4,7 @@
 ```
 Download 311-2017.csv from https://www.dropbox.com/s/b4t081p4ukltu2o/311-2017.zip?dl=0 to the data folder
 ```
-If you don't have pandas and sodapy installed in your machine
+If you don't have pandas and sodapy installed in your machine:
 ```
 $ pip install pandas
 $ pip install sodapy
