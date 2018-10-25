@@ -3,21 +3,12 @@ import pandas as pd
 from sodapy import Socrata
 import numpy as np
 
-# popfile = '/Users/yanjunli/Desktop/DBRS/2010+Census+Population+By+Zipcode+(ZCTA).csv'
-# data = pd.read_csv(popfile)
-
 if __name__ == "__main__":
 	"""
 	-----------------------------------------------------------------------
 	Source: https://dev.socrata.com/foundry/data.cityofnewyork.us/fhrw-4uyv
 	""" 
 	client = Socrata("data.cityofnewyork.us", '71rC0NkzYXZrZlJ9svKwZ9pNb')
-	# Example authenticated client (needed for non-public datasets):
-	# client = Socrata(data.cityofnewyork.us,
-	#                  MyAppToken,
-	#                  userame="user@example.com",
-	#                  password="AFakePassword")
-
 
 	# Filter down to the 2017 data using statement "created_date >= '2017-01-01T00:00:00.000"
 	# This is intended to find all complaints on 2017
