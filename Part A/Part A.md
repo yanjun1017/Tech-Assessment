@@ -1,202 +1,196 @@
 Part A.
 
-Due to the extremely large data set, results are base on the dataset with a size of 1,000,000. 
-
 Question: Consider only the 10 most common overall complaint types. For each borough, how many of each of 
 those 10 types were there in 2017?
 
-			     borough           complaint_type  count
-			0          BRONX           HEAT/HOT WATER  36450
-			1       BROOKLYN           HEAT/HOT WATER  33033
-			2      MANHATTAN           HEAT/HOT WATER  23532
-			3         QUEENS           HEAT/HOT WATER  14340
-			4  STATEN ISLAND           HEAT/HOT WATER   1015
-			0          BRONX      Noise - Residential  26911
-			1       BROOKLYN      Noise - Residential  28855
-			2      MANHATTAN      Noise - Residential  24631
-			3         QUEENS      Noise - Residential  18509
-			4  STATEN ISLAND      Noise - Residential   3052
-			0          BRONX          Illegal Parking   6672
-			1       BROOKLYN          Illegal Parking  24276
-			2      MANHATTAN          Illegal Parking   8377
-			3         QUEENS          Illegal Parking  20274
-			4  STATEN ISLAND          Illegal Parking   3496
-			0          BRONX         Blocked Driveway  10757
-			1       BROOKLYN         Blocked Driveway  21509
-			2      MANHATTAN         Blocked Driveway   1312
-			3         QUEENS         Blocked Driveway  23513
-			4  STATEN ISLAND         Blocked Driveway   1631
-			0          BRONX         Street Condition   6190
-			1       BROOKLYN         Street Condition  13515
-			2      MANHATTAN         Street Condition   8239
-			3         QUEENS         Street Condition  16509
-			4  STATEN ISLAND         Street Condition   5839
-			0          BRONX     UNSANITARY CONDITION  10803
-			1       BROOKLYN     UNSANITARY CONDITION  11142
-			2      MANHATTAN     UNSANITARY CONDITION   6369
-			3         QUEENS     UNSANITARY CONDITION   4890
-			4  STATEN ISLAND     UNSANITARY CONDITION    816
-			0          BRONX             Water System   3748
-			1       BROOKLYN             Water System   9207
-			2      MANHATTAN             Water System   4574
-			3         QUEENS             Water System   8536
-			4  STATEN ISLAND             Water System   2390
-			0          BRONX                    Noise   1344
-			1       BROOKLYN                    Noise   6914
-			2      MANHATTAN                    Noise  14087
-			3         QUEENS                    Noise   5017
-			4  STATEN ISLAND                    Noise    917
-			0          BRONX            PAINT/PLASTER   9157
-			1       BROOKLYN            PAINT/PLASTER   8925
-			2      MANHATTAN            PAINT/PLASTER   5784
-			3         QUEENS            PAINT/PLASTER   2644
-			4  STATEN ISLAND            PAINT/PLASTER    459
-			0          BRONX  Noise - Street/Sidewalk   4212
-			1       BROOKLYN  Noise - Street/Sidewalk   7257
-			2      MANHATTAN  Noise - Street/Sidewalk  10914
-			3         QUEENS  Noise - Street/Sidewalk   2531
-			4  STATEN ISLAND  Noise - Street/Sidewalk    305
+			         Borough       Complaint Type  count
+			0          BRONX  Noise - Residential  57663
+			1       BROOKLYN  Noise - Residential  67629
+			2      MANHATTAN  Noise - Residential  51026
+			3         QUEENS  Noise - Residential  46396
+			4  STATEN ISLAND  Noise - Residential   6744
+			         Borough  Complaint Type  count
+			0          BRONX  HEAT/HOT WATER  68718
+			1       BROOKLYN  HEAT/HOT WATER  66984
+			2      MANHATTAN  HEAT/HOT WATER  46529
+			3         QUEENS  HEAT/HOT WATER  29217
+			4  STATEN ISLAND  HEAT/HOT WATER   2073
+			         Borough   Complaint Type  count
+			0          BRONX  Illegal Parking  16122
+			1       BROOKLYN  Illegal Parking  55380
+			2      MANHATTAN  Illegal Parking  19687
+			3         QUEENS  Illegal Parking  46065
+			4  STATEN ISLAND  Illegal Parking   7574
+			         Borough    Complaint Type  count
+			0          BRONX  Blocked Driveway  24574
+			1       BROOKLYN  Blocked Driveway  49302
+			2      MANHATTAN  Blocked Driveway   3428
+			3         QUEENS  Blocked Driveway  54290
+			4  STATEN ISLAND  Blocked Driveway   3465
+			         Borough    Complaint Type  count
+			0          BRONX  Street Condition  11761
+			1       BROOKLYN  Street Condition  25432
+			2      MANHATTAN  Street Condition  14840
+			3         QUEENS  Street Condition  30629
+			4  STATEN ISLAND  Street Condition  10560
+			         Borough          Complaint Type  count
+			0          BRONX  Street Light Condition  18410
+			1       BROOKLYN  Street Light Condition  22458
+			2      MANHATTAN  Street Light Condition  11077
+			3         QUEENS  Street Light Condition  24258
+			4  STATEN ISLAND  Street Light Condition   6604
+			         Borough        Complaint Type  count
+			0          BRONX  UNSANITARY CONDITION  24561
+			1       BROOKLYN  UNSANITARY CONDITION  26659
+			2      MANHATTAN  UNSANITARY CONDITION  14635
+			3         QUEENS  UNSANITARY CONDITION  11474
+			4  STATEN ISLAND  UNSANITARY CONDITION   1953
+			         Borough           Complaint Type  count
+			0          BRONX  Noise - Street/Sidewalk  14025
+			1       BROOKLYN  Noise - Street/Sidewalk  21313
+			2      MANHATTAN  Noise - Street/Sidewalk  29147
+			3         QUEENS  Noise - Street/Sidewalk   7530
+			4  STATEN ISLAND  Noise - Street/Sidewalk    853
+			         Borough Complaint Type  count
+			0          BRONX   Water System  10221
+			1       BROOKLYN   Water System  19809
+			2      MANHATTAN   Water System  10930
+			3         QUEENS   Water System  18792
+			4  STATEN ISLAND   Water System   5349
+			         Borough Complaint Type  count
+			0          BRONX          Noise   3134
+			1       BROOKLYN          Noise  15421
+			2      MANHATTAN          Noise  29002
+			3         QUEENS          Noise  10685
+			4  STATEN ISLAND          Noise   1926
 
 Question: Consider only the 10 most common overall complaint types.  For the 10 most populous zip codes, 
 how many of each of those 10 types were there in 2017?
 
-	  incident_zip  complaint_type  count
-	        11226  HEAT/HOT WATER   3982
-	        11226  Noise - Residential   2292
-	        11226  Illegal Parking    391
-	        11226  Blocked Driveway    957
-	        11226  Street Condition    276
-	        11226  UNSANITARY CONDITION   1397
-	        11226   Water System    143
-	        11226          Noise    225
-	        11226  PAINT/PLASTER   1336
-	        11226  Noise - Street/Sidewalk    578
-
-	  incident_zip  complaint_type  count
-	        10467  HEAT/HOT WATER   3185
-	        10467  Noise - Residential   2342
-	        10467  Illegal Parking    496
-	        10467  Blocked Driveway    897
-	        10467  Street Condition    351
-	        10467  UNSANITARY CONDITION    977
-	        10467   Water System    235
-	        10467          Noise    151
-	        10467  PAINT/PLASTER    963
-	        10467  Noise - Street/Sidewalk    194
-
-	  incident_zip  complaint_type  count
-	        10453  HEAT/HOT WATER   3258
-	        10453  Noise - Residential   1643
-	        10453  Illegal Parking    312
-	        10453  Blocked Driveway    689
-	        10453  Street Condition    240
-	        10453  UNSANITARY CONDITION    891
-	        10453   Water System    247
-	        10453          Noise     55
-	        10453  PAINT/PLASTER    935
-	        10453  Noise - Street/Sidewalk    289
-
-	  incident_zip  complaint_type  count
-	        11385  HEAT/HOT WATER    696
-	        11385  Noise - Residential   1034
-	        11385  Illegal Parking   2001
-	        11385  Blocked Driveway   1362
-	        11385  Street Condition    681
-	        11385  UNSANITARY CONDITION    279
-	        11385   Water System    695
-	        11385          Noise    209
-	        11385  PAINT/PLASTER    148
-	        11385  Noise - Street/Sidewalk    216
-
-	  incident_zip  complaint_type  count
-	        10468  HEAT/HOT WATER   2849
-	        10468  Noise - Residential   2799
-	        10468  Illegal Parking    378
-	        10468  Blocked Driveway    417
-	        10468  Street Condition    206
-	        10468  UNSANITARY CONDITION    660
-	        10468   Water System    197
-	        10468          Noise    101
-	        10468  PAINT/PLASTER    737
-	        10468  Noise - Street/Sidewalk    412
-	  
-	  incident_zip  complaint_type  count
-	        10458  HEAT/HOT WATER   3517
-	        10458  Noise - Residential   1896
-	        10458  Illegal Parking    230
-	        10458  Blocked Driveway    398
-	        10458  Street Condition    249
-	        10458  UNSANITARY CONDITION    910
-	        10458   Water System    135
-	        10458          Noise     63
-	        10458  PAINT/PLASTER    822 
-	        10458  Noise - Street/Sidewalk    298
-	  
-	  incident_zip  complaint_type  count
-	        10452  HEAT/HOT WATER   2763
-	        10452  Noise - Residential   1867
-	        10452  Illegal Parking    236
-	        10452  Blocked Driveway    493
-	        10452  Street Condition    199
-	        10452  UNSANITARY CONDITION    859
-	        10452   Water System    217
-	        10452          Noise     72
-	        10452  PAINT/PLASTER    731
-	        10452  Noise - Street/Sidewalk    383
-
-	  incident_zip  complaint_type  count
-	        11207  HEAT/HOT WATER   1166
-	        11207  Noise - Residential   1192
-	        11207  Illegal Parking    646
-	        11207  Blocked Driveway    844
-	        11207  Street Condition    603
-	        11207  UNSANITARY CONDITION    603
-	        11207   Water System    302
-	        11207          Noise     96
-	        11207  PAINT/PLASTER    486
-	        11207  Noise - Street/Sidewalk    175
-
-	  incident_zip  complaint_type  count
-	        10031  HEAT/HOT WATER   2363
-	        10031  Noise - Residential   2082
-	        10031  Illegal Parking    185
-	        10031  Blocked Driveway     37
-	        10031  Street Condition    117
-	        10031  UNSANITARY CONDITION    580
-	        10031   Water System    285
-	        10031          Noise    161
-	        10031  PAINT/PLASTER    732
-	        10031  Noise - Street/Sidewalk   1410
-	  
-	  incident_zip  complaint_type  count
-	        11208  HEAT/HOT WATER   1033
-	        11208  Noise - Residential   1118
-	        11208  Illegal Parking    895
-	        11208  Blocked Driveway   1156
-	        11208  Street Condition    458
-	        11208  UNSANITARY CONDITION    588
-	        11208   Water System    210
-	        11208          Noise     73
-	        11208  PAINT/PLASTER    418  
-	        11208  Noise - Street/Sidewalk    242
+		  Incident Zip       Complaint Type  count
+		0        11226  Noise - Residential   4852
+		0        11226  HEAT/HOT WATER   7569
+		0        11226  Illegal Parking   1073
+		0        11226  Blocked Driveway   2200
+		0        11226  Street Condition    491
+		0        11226  Street Light Condition    202
+		0        11226  UNSANITARY CONDITION   3155
+		0        11226  Noise - Street/Sidewalk   1831
+		0        11226   Water System    406
+		0        11226          Noise    440
+		  Incident Zip       Complaint Type  count
+		0        11385  Noise - Residential   2609
+		0        11385  HEAT/HOT WATER   1526
+		0        11385  Illegal Parking   4129
+		0        11385  Blocked Driveway   3039
+		0        11385  Street Condition   1232
+		0        11385  Street Light Condition    791
+		0        11385  UNSANITARY CONDITION    647
+		0        11385  Noise - Street/Sidewalk    607
+		0        11385   Water System   1240
+		0        11385          Noise    507
+		  Incident Zip       Complaint Type  count
+		0        10467  Noise - Residential   5803
+		0        10467  HEAT/HOT WATER   6041
+		0        10467  Illegal Parking    982
+		0        10467  Blocked Driveway   2067
+		0        10467  Street Condition    612
+		0        10467  Street Light Condition    407
+		0        10467  UNSANITARY CONDITION   2192
+		0        10467  Noise - Street/Sidewalk    712
+		0        10467   Water System    560
+		0        10467          Noise    285
+		  Incident Zip       Complaint Type  count
+		0        11207  Noise - Residential   3060
+		0        11207  HEAT/HOT WATER   2461
+		0        11207  Illegal Parking   1495
+		0        11207  Blocked Driveway   2061
+		0        11207  Street Condition   1142
+		0        11207  Street Light Condition    932
+		0        11207  UNSANITARY CONDITION   1621
+		0        11207  Noise - Street/Sidewalk    558
+		0        11207   Water System    757
+		0        11207          Noise    199
+		  Incident Zip       Complaint Type  count
+		0        10453  Noise - Residential   3474
+		0        10453  HEAT/HOT WATER   5822
+		0        10453  Illegal Parking    632
+		0        10453  Blocked Driveway   1511
+		0        10453  Street Condition    417
+		0        10453  Street Light Condition    192
+		0        10453  UNSANITARY CONDITION   2055
+		0        10453  Noise - Street/Sidewalk   1124
+		0        10453   Water System    662
+		0        10453          Noise    129
+		  Incident Zip       Complaint Type  count
+		0        10458  Noise - Residential   3965
+		0        10458  HEAT/HOT WATER   6707
+		0        10458  Illegal Parking    505
+		0        10458  Blocked Driveway   1029
+		0        10458  Street Condition    417
+		0        10458  Street Light Condition    135
+		0        10458  UNSANITARY CONDITION   2048
+		0        10458  Noise - Street/Sidewalk    978
+		0        10458   Water System    426
+		0        10458          Noise    152
+		  Incident Zip       Complaint Type  count
+		0        10452  Noise - Residential   4298
+		0        10452  HEAT/HOT WATER   5009
+		0        10452  Illegal Parking    569
+		0        10452  Blocked Driveway    896
+		0        10452  Street Condition    333
+		0        10452  Street Light Condition    290
+		0        10452  UNSANITARY CONDITION   2193
+		0        10452  Noise - Street/Sidewalk   1309
+		0        10452   Water System    752
+		0        10452          Noise    136
+		  Incident Zip       Complaint Type  count
+		0        10468  Noise - Residential   5495
+		0        10468  HEAT/HOT WATER   5371
+		0        10468  Illegal Parking    994
+		0        10468  Blocked Driveway    974
+		0        10468  Street Condition    347
+		0        10468  Street Light Condition    228
+		0        10468  UNSANITARY CONDITION   1559
+		0        10468  Noise - Street/Sidewalk   1464
+		0        10468   Water System    487
+		0        10468          Noise    189
+		  Incident Zip       Complaint Type  count
+		0        11208  Noise - Residential   2792
+		0        11208  HEAT/HOT WATER   2052
+		0        11208  Illegal Parking   2148
+		0        11208  Blocked Driveway   2751
+		0        11208  Street Condition    816
+		0        11208  Street Light Condition    566
+		0        11208  UNSANITARY CONDITION   1341
+		0        11208  Noise - Street/Sidewalk    825
+		0        11208   Water System    710
+		0        11208          Noise    188
+		  Incident Zip       Complaint Type  count
+		0        11221  Noise - Residential   4016
+		0        11221  HEAT/HOT WATER   2247
+		0        11221  Illegal Parking    789
+		0        11221  Blocked Driveway   1699
+		0        11221  Street Condition    593
+		0        11221  Street Light Condition    522
+		0        11221  UNSANITARY CONDITION   1033
+		0        11221  Noise - Street/Sidewalk   1149
+		0        11221   Water System    612
+		0        11221          Noise    658
 
 Question: Considering all complaint types. Which boroughs are the biggest "complainers" relative 
 to the size of the population in 2017? Meaning, calculate a complaint-index that adjusts for population 
 of the borough.
 
-	Top:
-
-		borough        count  2010 Census Population     index
-		STATEN ISLAND    645                468730.0  1.211753
-
-	All:
-
-		borough        count  2010 Census Population     index                                       
-		STATEN ISLAND    645                468730.0  1.211753
-		QUEENS          2693               2348742.0  1.009667
-		BROOKLYN        2934               2603292.0  0.992463
-		BRONX           1550               1382480.0  0.987302
-		MANHATTAN       1757               1631991.0  0.948050
+		Borough    count  2010 Census Population     index                                          
+		BROOKLYN  746327               2732303.0  1.123755
+		                
+		Borough         count  2010 Census Population     index                                               
+		BROOKLYN       746327               2732303.0  1.123755
+		BRONX          433007               1592084.0  1.118923
+		STATEN ISLAND  125511                468730.0  1.101617
+		MANHATTAN      462344               2073659.0  0.917275
+		QUEENS         571664               2755424.0  0.853540
 
 
 
