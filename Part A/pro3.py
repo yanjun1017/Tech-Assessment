@@ -60,7 +60,7 @@ if __name__ == "__main__":
 	merge_data['index'] = (merge_data['count']/merge_data['2010 Census Population'])/(total['count']/total['2010 Census Population'])
 	# Print borough which is the biggest "complainer"
 	print(merge_data.sort_values('index', ascending = False).head(1))
-	# Print all borough 
+	# Print all boroughs 
 	print(merge_data.sort_values('index', ascending = False))
 	# Closed session when finished
 	client.close()
