@@ -6,7 +6,7 @@ if __name__ == "__main__":
 
 	path = "data/311-2017.csv"
 	# Read csv file
-	results = pd.DataFrame(pd.read_csv(path, dtype='unicode', low_memory=False))
+	results = pd.DataFrame(pd.read_csv(path, dtype='unicode', low_memory=False, nrows = 10000))
 	# Change [results] to DataFrame
 	results_df = pd.concat([results])
 	"""
@@ -15,7 +15,7 @@ if __name__ == "__main__":
 	to the size of the population in 2017? Meaning, calculate a complaint-index that adjusts for population 
 	of the Borough.
 	"""
-	pop = pd.read_csv("data/2010+Census+Population+By+Zipcode+(ZCTA).csv", dtype='unicode', low_memory=False)
+	pop = pd.read_csv("data/2010+Census+Population+By+Zipcode+(ZCTA).csv", dtype='unicode', low_memory=False, nrows = 10000)
 	pop_data = pd.concat([pop], ignore_index = True)
 	# grouped = pop_data.groupby("Borough").size().reset_index(name='count')
 	grouped1 = results_df.groupby(['Incident Zip', 'Borough']).size().reset_index(name='count').sort_values('count', ascending=False)

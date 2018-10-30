@@ -18,6 +18,8 @@ if __name__ == "__main__":
 		line = ifile.readline()
 		if line.strip() == 0:
 			break
+		if len(line) == 0:
+			break
 		# If 2017 is in created date of the current line
 		# Write it to the file
 		if "2017" in line.split(",")[1]:
